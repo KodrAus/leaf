@@ -98,12 +98,11 @@ let linear_network_with_one_layer: Layer = Layer::from_config(backend, &amp;line
 <p>Hurray! We just constructed a <a href="./deep-learning-glossary.html#Network">network</a>
 with one layer. (In the following chapter we will learn how to create more
 powerful networks).</p>
-<p>The <code>from_config</code> method initializes a <code>Layer</code>, which has a worker field to which
-it assigns the specific layer, (a struct that has <a href="https://github.com/autumnai/leaf/blob/master/src/layer.rs"><code>ILayer</code> (/src/layer.rs)</a> implemented).
-In that tiny example above, the worker field of the <code>linear_network_with_one_layer</code>
-is a <a href="https://github.com/autumnai/leaf/blob/master/src/layers/common/linear.rs"><code>Linear</code> (/src/layers/common/linear.rs)</a> as we constructed
-the <code>linear_network_with_one_layer</code> from a <code>LinearConfig</code>. That worker field
-introduces the specific behaviour of the layer.</p>
+<p>The <code>from_config</code> method initializes a <code>Layer</code>, which wraps the specific implementation (a struct that has <a href="https://github.com/autumnai/leaf/blob/master/src/layer.rs"><code>ILayer</code> (/src/layer.rs)</a> implemented) in a worker field.
+In the tiny example above, the worker field of the <code>linear_network_with_one_layer</code>
+is a <a href="https://github.com/autumnai/leaf/blob/master/src/layers/common/linear.rs"><code>Linear</code> (/src/layers/common/linear.rs)</a> becauase we constructed
+the <code>linear_network_with_one_layer</code> from a <code>LinearConfig</code>.
+The worker field introduces the specific behaviour of the layer.</p>
 <p>In the next chapters of 2. Layers we explore more about how we can construct
 real-world networks, the layer lifecycle and how we can add new layers to Leaf.</p>
 <h3>What can Layers do?</h3>
