@@ -103,14 +103,14 @@ In the tiny example above, the worker field of the <code>linear_network_with_one
 is a <a href="https://github.com/autumnai/leaf/blob/master/src/layers/common/linear.rs"><code>Linear</code> (/src/layers/common/linear.rs)</a> becauase we constructed
 the <code>linear_network_with_one_layer</code> from a <code>LinearConfig</code>.
 The worker field introduces the specific behaviour of the layer.</p>
-<p>In the next chapters of 2. Layers we explore more about how we can construct
-real-world networks, the layer lifecycle and how we can add new layers to Leaf.</p>
+<p>In the following chapters we explore more about how we can construct
+real-world networks, the layer lifecycle and how we can add new layers to the Leaf framework.</p>
 <h3>What can Layers do?</h3>
-<p>A layer can implement basically any behaviour, Deep Learning related like
-convolutions or LSTM, classical Machine Learning related like nearest neighbors
-or random forest or utility related like logging or normalization. To make the
-behaviour of a layer more explicit Leaf groups layers into one of five
-categories based on their (Machine Learning) functionality.</p>
+<p>A layer can implement basically any behaviour: deep learning related like
+convolutions or LSTM, classical machine learning related like nearest neighbors
+or random forest, or utility related like logging or normalization. To make the
+behaviour of a layer more explicit, Leaf groups layers into one of five
+categories based on their (machine learning) functionality.</p>
 <ol>
 <li><a href="#Activation%20Layers">Activation</a></li>
 <li><a href="#Common%20Layers">Common</a></li>
