@@ -70,19 +70,20 @@
                     <h1>Layers</h1>
 <h3>What is a Layer?</h3>
 <p><a href="./deep-learning-glossary.html#Layer">Layers</a> are the only building
-blocks in Leaf. A layer is like a function: given an input it computes an output. 
+blocks in Leaf. As we will see later on, everything is a layer. Even when
+we construct <a href="./deep-learning-glossary.html#Network">networks</a>, we are just
+working with layers. This makes the API clean and expressive.</p> 
+<p>A layer is like a function: given an input it computes an output. 
 It could be some mathematical expression,
 like Sigmoid, ReLU, or a non-mathematical instruction, like querying data
-from a database, logging data, or anything in between.</p>
-<p>In Leaf, layers describe not only the 'hidden layers' but also the input and
-output layer. In Leaf, as we will see later on, everything is a layer. Even when
-we construct <a href="./deep-learning-glossary.html#Network">networks</a>, we are just
-working with layers. This makes the API so clean and expressive.</p>
-<p>Layers in Leaf are only slightly opinionated - they need to take
+from a database, logging data, or anything in between.
+In Leaf, layers describe not only the interior 'hidden layers' but also the input and
+output layer.</p>
+<p>Layers are only slightly opinionated, they need to take
 an input and produce an output. This is required in order to successfully stack
-layers on top of each other and therefore, create a network. Other than that, a
+layers on top of each other to build a network. Other than that, a
 layer in Leaf can implement any behaviour.</p>
-<p>In Leaf, every layer can be constructed via the <a href="https://github.com/autumnai/leaf/blob/master/src/layer.rs"><code>LayerConfig</code>
+<p>Layers are constructed via the <a href="https://github.com/autumnai/leaf/blob/master/src/layer.rs"><code>LayerConfig</code>
 (/src/layer.rs)</a>, which makes creating even complex networks easy
 and manageable.</p>
 <pre><code class="language-rust">// construct the config for a fully connected layer with 500 notes
