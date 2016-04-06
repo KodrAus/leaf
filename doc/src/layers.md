@@ -2,7 +2,7 @@
 
 ### What is a Layer?
 
-[Layers](./deep-learning-glossary.html#Layer) are the highest-level and only building
+[Layers](./deep-learning-glossary.html#Layer) are the only building
 blocks in Leaf. As we will see later on, everything is a layer. Even when 
 we construct [networks](./deep-learning-glossary.html#Network), we are still just 
 working with layers composed of smalle layers. This makes the API clean and expressive.
