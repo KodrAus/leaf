@@ -126,14 +126,14 @@ can be found at
 
 ### Why Layers?
 
-The benefit of using a layer-based design approach is, that it allows for a very expressive
+The benefit of using a layer-based design approach is that it allows for a very expressive
 setup that can represent, as far as we know, any machine learning algorithm.
 That makes Leaf a framework, that can be used to construct practical machine
 learning applications that combine different paradigms.
 
 Other machine learning frameworks take a symbolic instead of a layered approach.
-For Leaf, we decided against it, as we found it easier for developers to handle
-layers, than mathematical expressions. More complex algorithms like LSTMs are
-also harder to replicate in a symbolic framework than with layered ones. We
-believe that Leafs layer approach strikes a great balance between,
+For Leaf we decided against it, as we found it easier for developers to work with
+layers than mathematical expressions. More complex algorithms like LSTMs are
+also harder to replicate in a symbolic framework. We
+believe that Leafs layer approach strikes a great balance between
 expressiveness, usability and performance.
