@@ -11,7 +11,7 @@ They basically describe the entire API, so let's take a closer look at what happ
 
 ### Initialization
 
-A layer is constructed from a `LayerConfig` via the `Layer::from_config`
+A layer is constructed from a `LayerConfig` with the `Layer::from_config`
 method, which returns a fully initialized `Layer`.
 
 ```rust
@@ -20,10 +20,10 @@ let mut alexnet: Layer = Layer::from_config(backend.clone(), &LayerConfig::new("
 ```
 
 In the example above, the first layer has a Sigmoid worker
-(`LayerType::Sigmoid`). The second layer has a Sequential worker.
-Although both `Layer::from_config` methods, return a `Layer`, the behavior of
-the `Layer` depends on the `LayerConfig` it was constructed with. The
-`Layer::from_config` calls internally the `worker_from_config` method, which
+(`LayerType::Sigmoid`) and the second layer has a Sequential worker.
+Although both `::from_config` methods return a `Layer`, the behavior of
+that `Layer` depends on the `LayerConfig` it was constructed with. The
+`Layer::from_config` internally calls the `worker_from_config` method, which
 constructs the specific worker defined by the `LayerConfig`.
 
 ```rust
