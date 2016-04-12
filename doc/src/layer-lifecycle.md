@@ -38,16 +38,15 @@ fn worker_from_config(backend: Rc<B>, config: &LayerConfig) -> Box<ILayer<B>> {
 }
 ```
 
-The layer specific `::from_config` (if available or needed) then takes care of
+The layer-specific `::from_config` (if available or needed) then takes care of
 initializing the worker struct, allocating memory for weights and so on.
 
-In case the worker layer is a container layer, its `::from_config` takes
+If the worker is a container layer, its `::from_config` takes
 care of initializing all the `LayerConfig`s it contains (which were added via its
-`.add_layer` method) and connecting them in
-the order they were provided to the `LayerConfig` of the container.
+`.add_layer` method) and connecting them in the order they were provided.
 
-Every `.forward` or `.backward` call that is now made to the returned `Layer` is
-sent to the worker.
+Every `.forward` or `.backward` call that is made on the returned `Layer` is
+run by the internal worker.
 
 ### Forward
 
