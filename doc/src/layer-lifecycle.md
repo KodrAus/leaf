@@ -50,24 +50,24 @@ run by the internal worker.
 
 ### Forward
 
-The `forward` method of a `Layer` sends the input through the constructed
+The `forward` method of a `Layer` threads the input through the constructed
 network and returns the output of the network's final layer.
 
 The `.forward` method does three things:
 
 1. Reshape the input data if necessary
-2. Sync the input/weights to the device were the computation happens. This step
-removes the worker layer from the obligation to care about memory synchronization.
-3. Call the `forward` method of the worker layer.
+2. Sync the input/weights to the device where the computation happens. This step
+removes the need for the worker layer to care about memory synchronization.
+3. Call the `forward` method of the internal worker layer.
 
-In case, the worker layer is a container layer, the `.forward` method of the
+If the worker layer is a container layer, the `.forward` method of the
 container layer takes care of calling the `.forward` methods of its managed
 layers in the right order.
 
 ### Backward
 
-The `.backward` of a `Layer` works quite similar to its `.forward`. Although it
-does not need to reshape the input. The `.backward` computes
+The `.backward` method of a `Layer` works similarly to `.forward`, apart from
+needing to reshape the input. The `.backward` method computes
 the gradient with respect to the input and the gradient w.r.t. the parameters but
 only returns the gradient w.r.t the input as only that is needed to compute the
 gradient of the entire network via the chain rule.
