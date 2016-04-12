@@ -47,7 +47,7 @@ classical, stochastic or hybrids, and solvers for executing and optimizing the
 model.
 
 This is already the entire API for machine learning with Leaf. To learn how
-this is possible and how to build machine learning applications, refer to 
+this is possible and how to build machine learning applications, refer to chapters 
 [2. Layers](./layers.html) and [3. Solvers](./solvers.html). Enjoy!
 
 [leaf]: https://github.com/autumnai/leaf
