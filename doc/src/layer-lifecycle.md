@@ -60,8 +60,8 @@ The `.forward` method does three things:
 removes the need for the worker layer to care about memory synchronization.
 3. Call the `forward` method of the internal worker layer.
 
-If the worker layer is a container layer, the `.forward` method of the
-container layer takes care of calling the `.forward` methods of its managed
+If the worker layer is a container layer, the `.forward` method 
+takes care of calling the `.forward` methods of its managed
 layers in the right order.
 
 ### Backward
@@ -72,6 +72,6 @@ the gradient with respect to the input as well as the gradient w.r.t. the parame
 the method only returns the input gradient because that is all that is needed to compute the
 gradient of the entire network via the chain rule.
 
-In case the worker layer is a container layer, the `.backward` method of the
-container layer takes care of calling the `.backward_input` and
+If the worker layer is a container layer, the `.backward` method 
+takes care of calling the `.backward_input` and
 `.backward_parameter` methods of its managed layers in the right order.
