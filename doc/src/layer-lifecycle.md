@@ -68,8 +68,8 @@ layers in the right order.
 
 The `.backward` method of a `Layer` works similarly to `.forward`, apart from
 needing to reshape the input. The `.backward` method computes
-the gradient with respect to the input and the gradient w.r.t. the parameters but
-only returns the gradient w.r.t the input as only that is needed to compute the
+the gradient with respect to the input as well as the gradient w.r.t. the parameters. However, 
+the method only returns the input gradient because that is all that is needed to compute the
 gradient of the entire network via the chain rule.
 
 In case the worker layer is a container layer, the `.backward` method of the
