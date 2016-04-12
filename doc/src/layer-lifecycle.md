@@ -1,15 +1,13 @@
 # Layer Lifecycle
 
-In [2. Layers](./layers.html) we have already seen a little bit about how to
-construct a `Layer` from a `LayerConfig`. In this chapter, we take
-a closer look at what happens inside Leaf when initializing a `Layer` when
-running the `.forward` of a `Layer` and when running the `.backward`. In the
-next chapter [2.2 Create a Network](./building-networks.html) we then
-apply our knowledge to construct deep networks via the container layer.
+In chapter [2. Layers](./layers.html) we saw how to
+construct a simple `Layer` from a `LayerConfig`. In this chapter, we take
+a closer look at what happens inside Leaf when initializing a `Layer` and when running its 
+`.forward` and `.backward` methods. In the next chapter [2.2 Create a Network](./building-networks.html) we 
+apply our knowledge to construct deep networks with the container layer.
 
-Initialization (`::from_config`), `.forward` and `.backward` are the three most
-important methods of a `Layer` and describe basically the entire API. Let's
-take a closer look at what happens inside Leaf, when these methods are called.
+The most important methods of a `Layer` are initialization (`::from_config`), `.forward` and `.backward`.
+They basically describe the entire API, so let's take a closer look at what happens inside Leaf when these methods are called.
 
 ### Initialization
 
